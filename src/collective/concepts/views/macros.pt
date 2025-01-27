@@ -1,0 +1,4 @@
+<div metal:define-macro="hero" class="text-center text-white bg-secondary p-4">
+    <h1 class="display-5 fw-bold">${context/title}</h1>
+    <p>${context/description}</p>
+</div>

@@ -1,0 +1,5 @@
+<metal:macro use-macro="here/main_template/macros/master">
+  <metal:slot fill-slot="main">
+    <metal:macro use-macro="here/collective-concepts-macros/macros/hero" />
+  </metal:slot>
+</metal:macro>

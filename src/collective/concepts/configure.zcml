@@ -1,0 +1,36 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    >
+
+  <genericsetup:registerProfile
+      name="default"
+      title="collective.concepts"
+      description="Installs the collective.concepts add-on"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="collective.concepts (uninstall)"
+      description="Uninstalls the collective.concepts add-on"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
+      />
+
+  <utility
+      factory=".NonInstallable"
+      name="collective.concepts"
+      />
+
+  <include file="vocabularies.zcml" />
+  <include package=".views" />
+  <include package=".viewlets" />
+  <include package=".contents" />
+  <include package=".upgrades" />
+  <include package=".adapters" />
+  <include package=".tables" />
+
+</configure>

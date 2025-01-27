@@ -1,0 +1,50 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    >
+
+  <browser:page
+      name="books-table"
+      for="*"
+      class=".books.BooksView"
+      template="books.pt"
+      permission="zope2.View"
+      layer="collective.concepts.interfaces.IBrowserLayer"
+      />
+  <browser:page
+      name="content-table"
+      for="*"
+      class=".generic.GenericView"
+      template="generic.pt"
+      permission="zope2.View"
+      layer="collective.concepts.interfaces.IBrowserLayer"
+      />
+
+  <adapter
+      factory=".generic.GenericTableValues"
+      provides="z3c.table.interfaces.IValues"
+      for="zope.interface.Interface
+           zope.publisher.interfaces.browser.IBrowserRequest
+           .interfaces.IGenericTable"
+      />
+
+  <adapter
+      factory=".columns.TitleColumn"
+      provides="z3c.table.interfaces.IColumn"
+      for="zope.interface.Interface
+           zope.publisher.interfaces.browser.IBrowserRequest
+           .interfaces.IGenericTable"
+      name="titleColumn"
+      />
+
+  <adapter
+      factory=".columns.StateColumn"
+      provides="z3c.table.interfaces.IColumn"
+      for="zope.interface.Interface
+           zope.publisher.interfaces.browser.IBrowserRequest
+           .interfaces.IGenericTable"
+      name="stateColumn"
+      />
+
+</configure>

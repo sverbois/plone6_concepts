@@ -1,0 +1,35 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    >
+
+  <browser:page
+      name="rich-listing"
+      for="plone.base.interfaces.siteroot.IPloneSiteRoot"
+      class=".listing.RichListingView"
+      template="listing.pt"
+      permission="zope2.View"
+      layer="collective.concepts.interfaces.IBrowserLayer"
+      />
+
+  <!-- <adapter
+      factory=".richtitle.RichTitleAdapterForDexterityContent"
+      provides=".interfaces.IRichTitle"
+      for="plone.dexterity.interfaces.IDexterityContent"
+      /> -->
+  <adapter
+      factory=".richtitle.RichTitleAdapterForDexterityContent"
+      name="type"
+      />
+
+  <adapter
+      factory=".richtitle.DateRichTitleAdapterForDexterityContent"
+      name="date"
+      />
+
+  <adapter factory=".richtitle.RichTitleAdapterForBook" />
+
+  <adapter factory=".serializer.FieldSerializer" />
+
+</configure>

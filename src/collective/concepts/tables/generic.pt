@@ -1,0 +1,8 @@
+<html metal:use-macro="context/main_template/macros/master">
+
+    <metal:block fill-slot="main" tal:define="table view/table">
+        <h1 class="documentFirstHeading">ICI</h1>
+        <p tal:content="structure table/render">Table</p>
+    </metal:block>
+
+</html>

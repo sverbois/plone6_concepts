@@ -1,0 +1,7 @@
+<div class="text-center">
+    <div>${view/message}</div>
+    <div>Je suis sur la page <em>${context/title}</em>
+    </div>
+    <div>Il y a ${view/count} pages dans ce site.
+    </div>
+</div>

@@ -1,0 +1,13 @@
+/bin
+/develop-eggs
+/eggs
+/include
+/lib
+/parts
+/var
+*.pyc
+.DS_Store
+.installed.cfg
+.python-version
+pyvenv.cfg
+*.egg-info

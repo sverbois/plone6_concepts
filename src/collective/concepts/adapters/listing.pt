@@ -1,0 +1,12 @@
+<metal:macro use-macro="here/main_template/macros/master">
+    <metal:slot fill-slot="main">
+        <h1>Liste des contenus de mon site</h1>
+        <p>Utilisation de l'adapter IRichTitle</p>
+        <article tal:repeat="item view/infos">
+            <a href="${item/url}">
+                <h2>${item/rich_title}</h2>
+            </a>
+            <p></p>
+        </article>
+    </metal:slot>
+</metal:macro>

@@ -1,0 +1,29 @@
+<metal:macro use-macro="here/main_template/macros/master">
+  <metal:slot fill-slot="style_slot">
+    <style>
+      h1 {
+        color: red;
+      }
+    </style>
+  </metal:slot>
+
+  <metal:slot fill-slot="main">
+    <h1>Une browser view basic</h1>
+    <h2>Titre du context</h2>
+    <p>
+      <strong>$${context/title}</strong> : ${context/title}</p>
+    <p>
+      <strong>$${path:context/title}</strong> : ${path:context/title}</p>
+    <p>
+      <strong>$${python:context.title}</strong> : ${python:context.title}</p>
+    <p>
+      <strong>tal:content="path:context/title"</strong> :
+      <span tal:content="path:context/title">Titre de mon contenu</span>
+    </p>
+    <p>
+      <span tal:replace="path:context/title">Titre de mon contenu</span>
+    </p>
+    <h2>Expressions Python</h2>
+    <p>$${python:3+4} : ${python:3+4}</p>
+  </metal:slot>
+</metal:macro>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="Book" meta_type="Dexterity FTI">
+
+  <property name="title">Book</property>
+  <property name="icon_expr">string:book</property>
+  <property name="schema">collective.concepts.contents.IBook</property>
+  <property name="klass">collective.concepts.contents.Book</property>
+  <property name="behaviors">
+    <element value="plone.basic" />
+    <element value="plone.namefromtitle" />
+    <element value="plone.textindexer" />
+  </property>
+
+  <property name="add_permission">collective.concepts.AddBook</property>
+  <property name="global_allow">True</property>
+  <property name="filter_content_types">True</property>
+  <property name="allowed_content_types">
+    <element value="Image" />
+    <element value="File" />
+  </property>
+
+</object>

@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    >
+  <browser:viewlet
+      name="collective.concepts.infos"
+      for="plone.app.contenttypes.interfaces.IDocument"
+      view="plone.app.layout.globals.interfaces.IViewView"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+      class=".infos.InfosViewlet"
+      template="infos.pt"
+      permission="zope2.View"
+      layer="collective.concepts.interfaces.IBrowserLayer"
+      />
+</configure>

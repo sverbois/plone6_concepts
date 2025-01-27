@@ -1,0 +1,8 @@
+<html metal:use-macro="context/main_template/macros/master">
+
+    <metal:block fill-slot="main">
+        <h1 class="documentFirstHeading">Livres</h1>
+        <p tal:define="table view/table" tal:content="structure table/render">Table</p>
+    </metal:block>
+
+</html>

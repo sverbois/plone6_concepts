@@ -1,0 +1,26 @@
+<metal:macro use-macro="here/main_template/macros/master">
+  <metal:slot fill-slot="main">
+    <h1>Patterns</h1>
+    <h2>pat-display-time</h2>
+    <span class="pat-display-time" datetime="1971-06-27T06:00:00Z"></span>
+    <h2>pat-tree</h2>
+    <div class="pat-tree" data-pat-tree="data:${view/tree};" />
+    <h2>pat-datatables</h2>
+    <table class="pat-datatables table">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>URL</th>
+          <th>Taille</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr tal:repeat="item view/data">
+          <td>${item/name}</td>
+          <td>${python:item['url']}</td>
+          <td>${item/size}</td>
+        </tr>
+      </tbody>
+    </table>
+  </metal:slot>
+</metal:macro>

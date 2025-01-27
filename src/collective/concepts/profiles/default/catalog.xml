@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+    <index name="book_category" meta_type="FieldIndex">
+        <indexed_attr value="book_category" />
+    </index>
+</object>

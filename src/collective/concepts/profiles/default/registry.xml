@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<registry>
+
+    <record name="plone.default_page">
+        <value>
+            <element>index</element>
+        </value>
+    </record>
+
+    <record name="plone.displayed_types">
+        <value purge="false">
+            <element>Author</element>
+            <element>Book</element>
+        </value>
+    </record>
+
+</registry>

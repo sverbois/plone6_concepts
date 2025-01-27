@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rolemap>
+  <permissions>
+
+    <permission name="collective.concepts: Add Author" acquire="False">
+      <role name="Manager" />
+      <role name="Contributor" />
+    </permission>
+
+    <permission name="collective.concepts: Add Book" acquire="False">
+      <role name="Manager" />
+      <role name="Contributor" />
+    </permission>
+
+  </permissions>
+</rolemap>

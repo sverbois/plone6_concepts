@@ -1,0 +1,11 @@
+<metal:macro use-macro="here/main_template/macros/master">
+    <metal:slot fill-slot="main">
+        <h1>Liste des pages de mon site</h1>
+        <article tal:repeat="page view/pages">
+            <a tal:attributes="href page/url">
+                <h2 tal:content="page/title">Titre de la page</h2>
+            </a>
+            <p>${page/description}</p>
+        </article>
+    </metal:slot>
+</metal:macro>

@@ -1,0 +1,53 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+
+  <include file="profiles.zcml" />
+
+  <genericsetup:upgradeSteps
+      profile="collective.concepts:default"
+      source="1000"
+      destination="1001"
+      >
+    <genericsetup:upgradeStep
+        title="Upgrade from 1000 to 1001"
+        handler=".upgrades.upgrade_from_1000_to_1001"
+        />
+    <genericsetup:upgradeDepends
+        title="Run rolemap step from collective.concepts:default"
+        import_profile="collective.concepts:default"
+        import_steps="rolemap"
+        />
+    <genericsetup:upgradeDepends
+        title="Run to1001 upgrade profile"
+        import_profile="collective.concepts.upgrades:to1001"
+        />
+  </genericsetup:upgradeSteps>
+
+  <genericsetup:upgradeSteps
+      profile="collective.concepts:default"
+      source="1001"
+      destination="1002"
+      >
+    <genericsetup:upgradeStep
+        title="Upgrade from 1001 to 1002"
+        handler=".upgrades.upgrade_from_1001_to_1002"
+        />
+  </genericsetup:upgradeSteps>
+
+  <genericsetup:upgradeSteps
+      profile="collective.concepts:default"
+      source="1002"
+      destination="1003"
+      >
+    <genericsetup:upgradeStep
+        title="Upgrade from 1002 to 1003"
+        handler=".upgrades.upgrade_from_1002_to_1003"
+        />
+    <genericsetup:upgradeDepends
+        title="Run to1003 upgrade profile"
+        import_profile="collective.concepts.upgrades:to1003"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

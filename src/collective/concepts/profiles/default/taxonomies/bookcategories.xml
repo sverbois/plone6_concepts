@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdex_v1p0 imsvdex_v1p0.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd" orderSignificant="false" profileType="hierarchicalTokenTerms" language="fr">
+  <vocabName>
+    <langstring language="en-us">Taxonomy - Book categories</langstring>
+    <langstring language="fr">Taxonomie - Catégorie de livres</langstring>
+  </vocabName>
+  <vocabIdentifier>bookcategories</vocabIdentifier>
+  <term>
+    <termIdentifier>crime</termIdentifier>
+    <caption>
+      <langstring language="en-us">Crime novel</langstring>
+      <langstring language="fr">Roman policier</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>romance</termIdentifier>
+    <caption>
+      <langstring language="en-us">Romance novel</langstring>
+      <langstring language="fr">Roman d'amour</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>adventure</termIdentifier>
+    <caption>
+      <langstring language="en-us">Adventure novel</langstring>
+      <langstring language="fr">Roman d'aventure</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>other</termIdentifier>
+    <caption>
+      <langstring language="en-us">Other novel</langstring>
+      <langstring language="fr">Autre roman</langstring>
+    </caption>
+  </term>
+</vdex>

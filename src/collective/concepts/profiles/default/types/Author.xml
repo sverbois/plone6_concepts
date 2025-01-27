@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="Author" meta_type="Dexterity FTI">
+
+  <property name="title">Author</property>
+  <property name="icon_expr">string:person</property>
+  <property name="schema">collective.concepts.contents.IAuthor</property>
+  <property name="klass">collective.concepts.contents.Author</property>
+  <property name="behaviors">
+    <element value="plone.namefromtitle" />
+  </property>
+
+  <property name="add_permission">collective.concepts.AddAuthor</property>
+  <property name="global_allow">True</property>
+  <property name="filter_content_types">True</property>
+  <property name="allowed_content_types" />
+
+</object>

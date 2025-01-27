@@ -1,0 +1,52 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    >
+
+  <browser:page
+      name="basic"
+      for="*"
+      template="basic.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="collective-concepts-macros"
+      for="*"
+      template="macros.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="otherview"
+      for="*"
+      template="otherview.pt"
+      permission="zope2.View"
+      />
+  <browser:page
+      name="patterns"
+      for="plone.base.interfaces.siteroot.IPloneSiteRoot"
+      class=".patterns.PatternsView"
+      template="patterns.pt"
+      permission="zope2.View"
+      layer="collective.concepts.interfaces.IBrowserLayer"
+      />
+
+  <browser:page
+      name="infradoc"
+      for="plone.base.interfaces.siteroot.IPloneSiteRoot"
+      class=".infradoc.InfradocView"
+      template="infradoc.pt"
+      permission="zope2.View"
+      layer="collective.concepts.interfaces.IBrowserLayer"
+      />
+  <browser:page
+      name="listing"
+      for="plone.base.interfaces.siteroot.IPloneSiteRoot"
+      class=".listing.ListingView"
+      template="listing.pt"
+      permission="zope2.View"
+      layer="collective.concepts.interfaces.IBrowserLayer"
+      />
+
+</configure>
