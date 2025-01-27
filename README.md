@@ -3,5 +3,6 @@
 ## Concepts
 
 - Content types : Book, Author
-- Viewlet
+- Viewlets : IDocument infos viewlet
+- Adapters : IRichTitle
 
