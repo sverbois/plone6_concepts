@@ -14,4 +14,6 @@
         </value>
     </record>
 
+    <records interface="collective.concepts.interfaces.ISettings" prefix="collective.concepts" />
+
 </registry>

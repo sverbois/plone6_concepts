@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    >
+
+  <browser:page
+      name="collective-concepts-controlpanel"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanels.SettingsControlPanelView"
+      permission="cmf.ManagePortal"
+      layer="collective.concepts.interfaces.IBrowserLayer"
+      />
+
+</configure>

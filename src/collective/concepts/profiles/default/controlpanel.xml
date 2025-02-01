@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<object name="portal_controlpanel">
+    <configlet title="Collective Concepts Settings" action_id="collective-concepts-controlpanel" appId="collective-concepts-controlpanel" category="Products" condition_expr="string:${portal_url}/@@collective-concepts-controlpanel" icon_expr="string:clipboard-heart" url_expr="string:${portal_url}/@@collective-concepts-controlpanel" visible="True">
+        <permission>Manage portal</permission>
+    </configlet>
+</object>
