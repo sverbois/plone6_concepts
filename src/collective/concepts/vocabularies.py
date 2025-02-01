@@ -1,7 +1,10 @@
+from plone import api
 from zope.interface import provider
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
+
+from .interfaces import ISettings
 
 
 def vocabulary_from_items(items):
@@ -9,16 +12,13 @@ def vocabulary_from_items(items):
     return SimpleVocabulary(terms)
 
 
-BOOK_CATEGORIES = {
-    "pol": "Roman policier",
-    "scf": "Science fiction",
-    "his": "Histoire",
-}
-
-
 @provider(IVocabularyFactory)
-def get_bookcategories_vocabulary(context):
-    return vocabulary_from_items(BOOK_CATEGORIES)
+def get_bookpublishers_vocabulary(context):
+    book_publishers = api.portal.get_registry_record(
+        name="collective.concepts.book_publishers",
+        default={},
+    )
+    return vocabulary_from_items(book_publishers)
 
 
 AUTHOR_NATIONALITIES = []

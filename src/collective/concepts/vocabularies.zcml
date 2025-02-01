@@ -1,8 +1,8 @@
 <configure xmlns="http://namespaces.zope.org/zope">
 
   <utility
-      name="collective.concepts.BookCategories"
-      component=".vocabularies.get_bookcategories_vocabulary"
+      name="collective.concepts.BookPublishers"
+      component=".vocabularies.get_bookpublishers_vocabulary"
       />
 
 </configure>

@@ -22,8 +22,13 @@ class IBook(model.Schema):
     category = schema.Choice(
         title="Category",
         vocabulary="collective.taxonomy.bookcategories",
-        # vocabulary="collective.concepts.BookCategories",
         required=True,
+    )
+
+    publisher = schema.Choice(
+        title="Publisher",
+        vocabulary="collective.concepts.BookPublishers",
+        required=False,
     )
 
     isbn = schema.TextLine(
