@@ -10,6 +10,8 @@
     <element value="plone.namefromtitle" />
     <element value="plone.textindexer" />
     <element value="collective.concepts.spotlight" />
+    <element value="collective.concepts.price" />
+
   </property>
 
   <property name="add_permission">collective.concepts.AddBook</property>

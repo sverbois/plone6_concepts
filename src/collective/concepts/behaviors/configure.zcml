@@ -10,4 +10,14 @@
       provides=".spotlight.ISpotlight"
       />
 
+  <plone:behavior
+      name="collective.concepts.price"
+      title="Price with net, VAT and gross"
+      factory=".price.PriceAdapter"
+      provides=".price.IPriceBehavior"
+      for=".price.IPriceMarker"
+      marker=".price.IPriceMarker"
+      />
+
+
 </configure>

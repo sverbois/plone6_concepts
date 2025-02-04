@@ -25,4 +25,15 @@
       layer="collective.concepts.interfaces.IBrowserLayer"
       />
 
+  <browser:viewlet
+      name="collective.concepts.price"
+      for="collective.concepts.behaviors.price.IPriceMarker"
+      view="plone.app.layout.globals.interfaces.IViewView"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+      class=".price.PriceViewlet"
+      template="price.pt"
+      permission="zope2.View"
+      layer="collective.concepts.interfaces.IBrowserLayer"
+      />
+
 </configure>

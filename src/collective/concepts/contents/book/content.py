@@ -43,10 +43,6 @@ class IBook(model.Schema):
         max_length=2000,
         required=False,
     )
-    price = schema.Decimal(
-        title="Prix du livre",
-        required=False,
-    )
     authors = RelationList(
         title="Auteurs",
         default=[],

@@ -1,0 +1,3 @@
+<div>
+    <strong>Price</strong>: ${view/price_gross} € (Net: ${view/price_net} €, VAT: ${view/price_vat} €)
+</div>
