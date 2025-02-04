@@ -1,2 +1,26 @@
-# voir https://2023.training.plone.org/mastering-plone-5/behaviors_1.html
-# + viewlet pour afficher les spotlight en home page
+from plone.autoform.interfaces import IFormFieldProvider
+from plone.indexer import indexer
+from plone.supermodel import directives
+from plone.supermodel import model
+from zope import schema
+from zope.interface import provider
+
+
+@provider(IFormFieldProvider)
+class ISpotlight(model.Schema):
+
+    is_spotlight = schema.Bool(
+        title="This content is in the spotlight",
+        required=False,
+    )
+
+    directives.fieldset(
+        "categorization",
+        label="Categorization",
+        fields=("is_spotlight",),
+    )
+
+
+@indexer(ISpotlight)
+def is_spotlight_indexer(object):
+    return object.is_spotlight

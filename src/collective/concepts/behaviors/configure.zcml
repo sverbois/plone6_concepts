@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    >
+
+  <plone:behavior
+      name="collective.concepts.spotlight"
+      title="Spotlight"
+      description="Mark a content as spotlight"
+      provides=".spotlight.ISpotlight"
+      />
+
+</configure>

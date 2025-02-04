@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="Document" meta_type="Dexterity FTI">
+
+    <property name="behaviors" purge="False">
+        <element value="collective.concepts.spotlight" />
+    </property>
+
+</object>

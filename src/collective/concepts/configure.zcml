@@ -33,5 +33,6 @@
   <include package=".upgrades" />
   <include package=".adapters" />
   <include package=".tables" />
+  <include package=".behaviors" />
 
 </configure>

@@ -2,6 +2,7 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     >
+
   <browser:viewlet
       name="collective.concepts.infos"
       for="plone.app.contenttypes.interfaces.IDocument"
@@ -12,4 +13,16 @@
       permission="zope2.View"
       layer="collective.concepts.interfaces.IBrowserLayer"
       />
+
+  <browser:viewlet
+      name="collective.concepts.spotlight"
+      for="plone.base.interfaces.siteroot.IPloneSiteRoot"
+      view="plone.app.layout.globals.interfaces.IViewView"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+      class=".spotlight.SpotlightViewlet"
+      template="spotlight.pt"
+      permission="zope2.View"
+      layer="collective.concepts.interfaces.IBrowserLayer"
+      />
+
 </configure>

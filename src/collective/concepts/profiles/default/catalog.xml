@@ -3,4 +3,7 @@
     <index name="book_category" meta_type="FieldIndex">
         <indexed_attr value="book_category" />
     </index>
+    <index name="is_spotlight" meta_type="BooleanIndex">
+        <indexed_attr value="is_spotlight" />
+    </index>
 </object>
