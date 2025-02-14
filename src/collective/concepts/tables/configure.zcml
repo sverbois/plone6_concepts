@@ -13,20 +13,20 @@
       layer="collective.concepts.interfaces.IBrowserLayer"
       />
   <browser:page
-      name="content-table"
+      name="contents-table"
       for="*"
-      class=".generic.GenericView"
-      template="generic.pt"
+      class=".contents.GenericView"
+      template="contents.pt"
       permission="zope2.View"
       layer="collective.concepts.interfaces.IBrowserLayer"
       />
 
   <adapter
-      factory=".generic.GenericTableValues"
+      factory=".contents.ContentsTableValues"
       provides="z3c.table.interfaces.IValues"
       for="zope.interface.Interface
            zope.publisher.interfaces.browser.IBrowserRequest
-           .interfaces.IGenericTable"
+           .interfaces.IContentsTable"
       />
 
   <adapter
@@ -34,7 +34,7 @@
       provides="z3c.table.interfaces.IColumn"
       for="zope.interface.Interface
            zope.publisher.interfaces.browser.IBrowserRequest
-           .interfaces.IGenericTable"
+           .interfaces.IContentsTable"
       name="titleColumn"
       />
 
@@ -43,7 +43,7 @@
       provides="z3c.table.interfaces.IColumn"
       for="zope.interface.Interface
            zope.publisher.interfaces.browser.IBrowserRequest
-           .interfaces.IGenericTable"
+           .interfaces.IContentsTable"
       name="stateColumn"
       />
 
