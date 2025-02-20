@@ -12,10 +12,11 @@
       permission="zope2.View"
       layer="collective.concepts.interfaces.IBrowserLayer"
       />
+
   <browser:page
       name="contents-table"
       for="*"
-      class=".contents.GenericView"
+      class=".contents.ContentsTableView"
       template="contents.pt"
       permission="zope2.View"
       layer="collective.concepts.interfaces.IBrowserLayer"
@@ -26,24 +27,24 @@
       provides="z3c.table.interfaces.IValues"
       for="zope.interface.Interface
            zope.publisher.interfaces.browser.IBrowserRequest
-           .interfaces.IContentsTable"
+           .contents.IContentsTable"
       />
 
   <adapter
-      factory=".columns.TitleColumn"
+      factory=".contents.TitleColumn"
       provides="z3c.table.interfaces.IColumn"
       for="zope.interface.Interface
            zope.publisher.interfaces.browser.IBrowserRequest
-           .interfaces.IContentsTable"
+           .contents.IContentsTable"
       name="titleColumn"
       />
 
   <adapter
-      factory=".columns.StateColumn"
+      factory=".contents.StateColumn"
       provides="z3c.table.interfaces.IColumn"
       for="zope.interface.Interface
            zope.publisher.interfaces.browser.IBrowserRequest
-           .interfaces.IContentsTable"
+           .contents.IContentsTable"
       name="stateColumn"
       />
 
