@@ -19,5 +19,14 @@
       marker=".price.IPriceMarker"
       />
 
+  <plone:behavior
+      name="collective.concepts.votes"
+      title="Mark a content as votable"
+      factory=".votes.VotesAdapter"
+      provides=".votes.IVotesBehavior"
+      for=".votes.IVotesMarker"
+      marker=".votes.IVotesMarker"
+      />
+
 
 </configure>

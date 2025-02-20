@@ -11,7 +11,7 @@
     <element value="plone.textindexer" />
     <element value="collective.concepts.spotlight" />
     <element value="collective.concepts.price" />
-
+    <element value="collective.concepts.votes" />
   </property>
 
   <property name="add_permission">collective.concepts.AddBook</property>
