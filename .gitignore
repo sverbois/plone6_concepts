@@ -1,3 +1,9 @@
+.DS_Store
+.installed.cfg
+.mr.developer.cfg
+.python-version
+*.egg-info
+*.pyc
 /bin
 /develop-eggs
 /eggs
@@ -5,9 +11,4 @@
 /lib
 /parts
 /var
-*.pyc
-.DS_Store
-.installed.cfg
-.python-version
 pyvenv.cfg
-*.egg-info
