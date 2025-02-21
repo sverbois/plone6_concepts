@@ -37,7 +37,7 @@
       />
 
   <browser:page
-      name="collective.concepts.votes"
+      name="collective-concepts-votes"
       for="collective.concepts.behaviors.IVotesMarker"
       class=".votes.VotesView"
       template="votes.pt"

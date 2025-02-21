@@ -11,6 +11,10 @@ from zope.interface import implementer
 from zope.interface import provider
 
 
+class IPriceMarker(Interface):
+    """Marker for content that has a price."""
+
+
 @provider(IFormFieldProvider)
 class IPriceBehavior(model.Schema):
 
@@ -20,10 +24,6 @@ class IPriceBehavior(model.Schema):
     )
     price_vat = Attribute("VAT 20% of net price")
     price_gross = Attribute("Price gross (net + VAT 20%")
-
-
-class IPriceMarker(Interface):
-    """Marker for content that has a price."""
 
 
 @implementer(IPriceBehavior)
@@ -43,7 +43,7 @@ class PriceAdapter:
 
     @property
     def price_vat(self):
-        return self.price_net * Decimal(0.2)
+        return self.price_net * Decimal(0.21)
 
     @property
     def price_gross(self):

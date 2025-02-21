@@ -1,4 +1,4 @@
-<div id="collective-concepts-votes" class="border p-3 float-end" tal:define="icons python:context.restrictedTraverse('@@iconresolver');">
+<div id="collective-concepts-votes-content" class="border p-3 float-end" tal:define="icons python:context.restrictedTraverse('@@iconresolver');">
     <div >
         <h6 class="m-0 fw-medium">Avis (${view/vote_number})</h6>
         <p tal:condition="python:not view.api.has_votes()">
@@ -17,7 +17,7 @@
     <div tal:condition="view/can_vote">
         <hr />
         <h6 class="fw-medium">Donner votre avis</h6>
-        <form method="post" action="${context/absolute_url}/@@collective.concepts.votes#collective-concepts-votes" class="form-inline pat-inject">
+        <form method="post" action="${context/absolute_url}/@@collective-concepts-votes#collective-concepts-votes-content" class="form-inline pat-inject">
             <select class="form-select form-select-sm d-inline-block w-auto" name="vote">
                 <option></option>
                 <option value="1">1*</option>
@@ -29,9 +29,17 @@
             <input class="btn btn-sm btn-primary d-inline-block" type="submit" name="give_vote" value="Envoyer" />
         </form>
     </div>
+    <div tal:condition="view/has_vote">
+        <hr />
+        <h6 class="fw-medium">Supprimer votre avis </h6>
+        <p>Vous avez voté : ${python: view.api.votes[view.current_user_id]}</p>
+        <form method="post" action="${context/absolute_url}/@@collective-concepts-votes#collective-concepts-votes-content" class="form-inline pat-inject">
+            <input class="btn btn-sm btn-primary d-inline-block" type="submit" name="remove_vote" value="Supprimer mon vote" />
+        </form>
+    </div>
     <div tal:condition="view/can_clear_votes">
         <hr />
-        <form method="post" action="${context/absolute_url}/@@collective.concepts.votes#collective-concepts-votes" class="form-inline pat-inject">
+        <form method="post" action="${context/absolute_url}/@@collective-concepts-votes#collective-concepts-votes-content" class="form-inline pat-inject">
             <input class="btn btn-sm btn-danger d-inline-block" type="submit" name="clear_votes" value="Effacer tous les avis" />
         </form>
     </div>

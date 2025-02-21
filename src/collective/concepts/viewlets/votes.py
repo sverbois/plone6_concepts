@@ -23,12 +23,18 @@ class VotesView(BrowserView):
         return is_authenticated and not has_already_voted
 
     @property
+    def has_vote(self):
+        is_authenticated = not api.user.is_anonymous()
+        has_already_voted = self.api.has_already_voted(self.current_user_id)
+        return is_authenticated and has_already_voted
+
+    @property
     def can_clear_votes(self):
         return api.user.has_permission("Manage portal", username=self.current_user_id)
 
     @property
     def vote_number(self):
-        return len(self.api.voted)
+        return len(self.api.votes)
 
     @property
     def mean_on_ten(self):
@@ -41,6 +47,8 @@ class VotesView(BrowserView):
                 return
             vote = int(vote)
             self.api.vote(self.current_user_id, vote)
+        elif "remove_vote" in self.request.form:
+            self.api.remove_vote(self.current_user_id)
         elif "clear_votes" in self.request.form and self.can_clear_votes:
             self.api.clear()
 
@@ -55,5 +63,5 @@ class VotesViewlet(base.ViewletBase):
     def render(self):
         if not IVotesMarker.providedBy(self.context):
             return ""
-        view = api.content.get_view("collective.concepts.votes", self.context)
+        view = api.content.get_view("collective-concepts-votes", self.context)
         return view()
