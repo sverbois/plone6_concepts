@@ -30,6 +30,6 @@
 
   <adapter factory=".richtitle.RichTitleAdapterForBook" />
 
-  <adapter factory=".serializer.FieldSerializer" />
+  <!--<adapter factory=".serializer.FieldSerializer" />-->
 
 </configure>
