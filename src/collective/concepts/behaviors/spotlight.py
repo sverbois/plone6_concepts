@@ -19,8 +19,3 @@ class ISpotlight(model.Schema):
         label="Categorization",
         fields=("is_spotlight",),
     )
-
-
-@indexer(ISpotlight)
-def is_spotlight_indexer(object):
-    return object.is_spotlight
