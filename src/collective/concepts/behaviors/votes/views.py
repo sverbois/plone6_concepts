@@ -1,13 +1,13 @@
-import transaction
 from plone import api
-from plone.app.layout.viewlets import common as base
 from Products.Five.browser import BrowserView
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from collective.concepts.behaviors import IVotesBehavior
-from collective.concepts.behaviors import IVotesMarker
 
 
-class VotesView(BrowserView):
+class BaseView(BrowserView):
+    index = ViewPageTemplateFile("view.pt")
+
     @property
     def api(self):
         return IVotesBehavior(self.context)
@@ -40,28 +40,37 @@ class VotesView(BrowserView):
     def mean_on_ten(self):
         return int(self.api.mean * 2)
 
-    def handle_post(self):
-        if "give_vote" in self.request.form and self.can_vote:
-            vote = self.request.form.get("vote")
-            if not vote or not vote.isdigit():
-                return
-            vote = int(vote)
-            self.api.vote(self.current_user_id, vote)
-        elif "remove_vote" in self.request.form:
-            self.api.remove_vote(self.current_user_id)
-        elif "clear_votes" in self.request.form and self.can_clear_votes:
-            self.api.clear()
+    def handle_request(self):
+        raise NotImplementedError
 
     def __call__(self):
-        if self.request.method == "POST":
-            self.handle_post()
+        self.handle_request()
         return self.index()
 
 
-class VotesViewlet(base.ViewletBase):
+class ViewView(BaseView):
 
-    def render(self):
-        if not IVotesMarker.providedBy(self.context):
-            return ""
-        view = api.content.get_view("collective-concepts-votes", self.context)
-        return view()
+    def handle_request(self):
+        pass
+
+
+class VoteView(BaseView):
+    def handle_request(self):
+
+        vote = self.request.form.get("vote")
+        if not vote or not vote.isdigit():
+            return
+        vote = int(vote)
+        self.api.vote(self.current_user_id, vote)
+
+
+class RemoveView(BaseView):
+    def handle_request(self):
+        if self.api.has_already_voted(self.current_user_id):
+            self.api.remove_vote(self.current_user_id)
+
+
+class ClearView(BaseView):
+    def handle_request(self):
+        if self.can_clear_votes:
+            self.api.clear()

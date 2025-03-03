@@ -36,23 +36,4 @@
       layer="collective.concepts.interfaces.IBrowserLayer"
       />
 
-  <browser:page
-      name="collective-concepts-votes"
-      for="collective.concepts.behaviors.IVotesMarker"
-      class=".votes.VotesView"
-      template="votes.pt"
-      permission="zope2.View"
-      layer="collective.concepts.interfaces.IBrowserLayer"
-      />
-
-  <browser:viewlet
-      name="collective.concepts.votes"
-      for="collective.concepts.behaviors.IVotesMarker"
-      view="plone.app.layout.globals.interfaces.IViewView"
-      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
-      class=".votes.VotesViewlet"
-      permission="zope2.View"
-      layer="collective.concepts.interfaces.IBrowserLayer"
-      />
-
 </configure>

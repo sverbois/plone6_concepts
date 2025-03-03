@@ -1,0 +1,34 @@
+<div id="collective-concepts-votes-content" class="border p-3 float-end" tal:define="icons python:context.restrictedTraverse('@@iconresolver');">
+    <div >
+        <h6 class="m-0 fw-medium">Avis (${view/vote_number})</h6>
+        <p tal:condition="python:not view.api.has_votes()">
+            Pas encore d'avis.
+        </p>
+        <p tal:define="mean_on_ten view/mean_on_ten" tal:condition="python:view.api.has_votes()">
+            <tal:stars tal:repeat="star python:range(mean_on_ten//2)">
+                <tal:icon tal:replace="structure python:icons.tag('star-fill')" />
+            </tal:stars>
+            <tal:icon tal:condition="python:not (mean_on_ten % 2 == 0)" tal:replace="structure python:icons.tag('star-half')" />
+            <tal:stars tal:repeat="star python:range((10-mean_on_ten)//2)">
+                <tal:icon tal:replace="structure python:icons.tag('star')" />
+            </tal:stars>
+        </p>
+    </div>
+    <div tal:condition="view/can_vote">
+        <hr />
+        <a href="${context/absolute_url}/@@collective-concepts-votes-add" class="btn btn-sm btn-primary d-inline-block pat-plone-modal" data-pat-plone-modal='{"width": "400px"}'>Donner votre avis</a>
+    </div>
+    <div tal:condition="view/has_vote">
+        <hr />
+        <p>Vous avez voté : ${python: view.api.votes[view.current_user_id]}</p>
+        <form method="post" action="${context/absolute_url}/@@collective-concepts-votes-remove#collective-concepts-votes-content" class="form-inline pat-inject">
+            <button class="btn btn-sm btn-primary d-inline-block">Supprimer mon avis</button>
+        </form>
+    </div>
+    <div tal:condition="view/can_clear_votes">
+        <hr />
+        <form method="post" action="${context/absolute_url}/@@collective-concepts-votes-clear#collective-concepts-votes-content" class="form-inline pat-inject">
+            <button class="btn btn-sm btn-danger d-inline-block">Effacer tous les avis</button>
+        </form>
+    </div>
+</div>

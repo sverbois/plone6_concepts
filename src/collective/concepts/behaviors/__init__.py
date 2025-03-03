@@ -1,4 +1,4 @@
 from .price import IPriceBehavior
 from .spotlight import ISpotlight
-from .votes import IVotesBehavior
-from .votes import IVotesMarker
+from .votes.behavior import IVotesBehavior
+from .votes.behavior import IVotesMarker
