@@ -1,0 +1,34 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <subscriber
+      for="collective.concepts.contents.IBook
+           zope.lifecycleevent.interfaces.IObjectAddedEvent"
+      handler=".subscribers.on_add_book"
+      />
+  <subscriber
+      for="collective.concepts.contents.IBook
+           zope.lifecycleevent.interfaces.IObjectAddedEvent"
+      handler=".subscribers.on_add_and_modify_book"
+      />
+  <subscriber
+      for="collective.concepts.contents.IBook
+           zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+      handler=".subscribers.on_add_and_modify_book"
+      />
+  <subscriber
+      for="collective.concepts.contents.IBook
+           Products.CMFCore.interfaces.IActionSucceededEvent"
+      handler=".subscribers.on_after_transition_book"
+      />
+  <subscriber
+      for="collective.concepts.contents.IBook
+           OFS.interfaces.IObjectWillBeRemovedEvent"
+      handler=".subscribers.on_before_delete_book"
+      />
+  <subscriber
+      for="collective.concepts.contents.IBook
+           zope.lifecycleevent.interfaces.IObjectRemovedEvent"
+      handler=".subscribers.on_after_delete_book"
+      />
+
+</configure>

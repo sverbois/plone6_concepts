@@ -26,6 +26,7 @@
       />
 
   <include file="controlpanels.zcml" />
+  <include file="subscribers.zcml" />
   <include file="vocabularies.zcml" />
   <include package=".adapters" />
   <include package=".behaviors" />
