@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    >
+
+  <browser:page
+      name="change-password"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      class=".changepassword.ChangePassword"
+      permission="zope2.View"
+      layer="collective.concepts.interfaces.IBrowserLayer"
+      />
+
+  <browser:page
+      name="ask-question"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      class=".askquestion.AskQuestion"
+      permission="zope2.View"
+      layer="collective.concepts.interfaces.IBrowserLayer"
+      />
+
+</configure>
