@@ -2,14 +2,14 @@ from plone import schema
 from plone.app.dexterity import textindexer
 from plone.app.textfield import RichText
 from plone.app.vocabularies.catalog import StaticCatalogVocabulary
-from plone.app.z3cform.widget import AjaxSelectFieldWidget
-from plone.app.z3cform.widget import SelectFieldWidget
+from plone.app.z3cform.widgets.relateditems import RelatedItemsFieldWidget
+from plone.app.z3cform.widgets.select import Select2FieldWidget
+from plone.app.z3cform.widgets.select import SelectFieldWidget
 from plone.autoform import directives
 from plone.dexterity.content import Container
 from plone.indexer import indexer
 from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
-from z3c.form.browser.radio import RadioFieldWidget
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from zope.interface import implementer
@@ -49,9 +49,7 @@ class IBook(model.Schema):
         value_type=RelationChoice(
             title="Auteur",
             vocabulary=StaticCatalogVocabulary(
-                {
-                    "portal_type": ["Author"],
-                },
+                {"portal_type": ["Author"]},
                 title_template="{brain.Type}: {brain.Title} at {path}",
             ),
         ),
@@ -62,7 +60,12 @@ class IBook(model.Schema):
     textindexer.searchable("isbn")
 
     # Widgets
-    directives.widget("authors", SelectFieldWidget)
+    # directives.widget("authors", SelectFieldWidget)
+    directives.widget("authors", Select2FieldWidget)
+    # directives.widget(
+    #     "authors",
+    #     RelatedItemsFieldWidget,
+    # )
     # directives.widget(
     #     "authors",
     #     AjaxSelectFieldWidget,

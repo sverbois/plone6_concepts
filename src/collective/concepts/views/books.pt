@@ -1,0 +1,22 @@
+<metal:macro use-macro="here/main_template/macros/master">
+    <metal:slot fill-slot="main">
+        <h1>Liste des livres</h1>
+        <div class="row row-cols-3">
+            <article class="col card text-center" tal:repeat="book view/books">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a href="${book/url}">${book/title}</a>
+                    </h3>
+
+                    <p>
+                        <span tal:repeat="author book/authors">
+                            <a href="${author/url}">${author/fullname}</a>
+                        </span>
+                    </p>
+                    <p>${book/description}</p>
+
+                </div>
+            </article>
+        </div>
+    </metal:slot>
+</metal:macro>

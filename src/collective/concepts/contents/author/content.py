@@ -1,11 +1,6 @@
 from plone import schema
-from plone.app.textfield import RichText
-from plone.app.z3cform.widget import AjaxSelectFieldWidget
-from plone.autoform import directives
 from plone.dexterity.content import Item
-from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
-from z3c.form.browser.radio import RadioFieldWidget
 from zope.interface import implementer
 
 

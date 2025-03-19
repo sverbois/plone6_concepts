@@ -48,5 +48,13 @@
       permission="zope2.View"
       layer="collective.concepts.interfaces.IBrowserLayer"
       />
+  <browser:page
+      name="books-listing"
+      for="plone.base.interfaces.siteroot.IPloneSiteRoot"
+      class=".books.BooksView"
+      template="books.pt"
+      permission="zope2.View"
+      layer="collective.concepts.interfaces.IBrowserLayer"
+      />
 
 </configure>
