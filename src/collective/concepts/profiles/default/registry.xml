@@ -14,6 +14,19 @@
         </value>
     </record>
 
+    <record name="plone.icon.contenttype/author">
+        <field type="plone.registry.field.TextLine">
+            <title>Author content type icon</title>
+        </field>
+        <value key="resource">++plone++bootstrap-icons/person.svg</value>
+    </record>
+    <record name="plone.icon.contenttype/book">
+        <field type="plone.registry.field.TextLine">
+            <title>Book content type icon</title>
+        </field>
+        <value key="resource">++plone++bootstrap-icons/book.svg</value>
+    </record>
+
     <records interface="collective.concepts.interfaces.ISettings" prefix="collective.concepts" />
 
 </registry>
