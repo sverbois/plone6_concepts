@@ -18,5 +18,20 @@
                 </div>
             </article>
         </div>
+        <h1 class="pt-3">Liste des auteurs</h1>
+        <div class="row row-cols-2">
+            <article class="col card" tal:repeat="author view/authors">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a href="${author/url}">${author/title}</a>
+                    </h3>
+                    <ul>
+                        <li tal:repeat="b author/books">
+                            <a href="${b/url}">${b/title}</a>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </div>
     </metal:slot>
 </metal:macro>
