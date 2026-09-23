@@ -1,4 +1,4 @@
-# Minimalist Plone 6.1 Classic UI Product to introduce Plone concepts
+# Minimalist Plone 6.1 Blicca Product to introduce Plone concepts
 
 ## Concepts
 
