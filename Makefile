@@ -16,9 +16,8 @@ start:  ## Start instance in fg mode
 
 .PHONY: clean
 clean:  ## Clean environment
-	rm -rf .python-version .installed.cfg .mr.developer.cfg bin develop-eggs eggs include lib parts pyvenv.cfg
+	rm -rf .venv .python-version .installed.cfg .mr.developer.cfg bin develop-eggs eggs include lib parts pyvenv.cfg
 
 .venv/bin/buildout:
 	uv venv
-	uv pip install -r https://dist.plone.org/release/6.1.5/requirements.txt
-	uv pip install horse-with-no-namespace==20260202.0
+	uv pip install -r https://dist.plone.org/release/6.2.2/requirements.txt
