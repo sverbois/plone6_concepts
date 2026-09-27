@@ -1,8 +1,23 @@
-# Minimalist Plone 6.1 Blicca Product to introduce Plone concepts
+# Minimalist Plone 6.2 Blicca Product to introduce Plone concepts
 
-## Concepts
+## Content type
 
-- Content types : Book, Author
-- Viewlets : IDocument infos viewlet
-- Adapters : IRichTitle
+### Book
 
+### Author
+
+### Vocabulary
+
+## View
+
+### Content view
+
+### Generic view
+
+## Viewet
+
+- IDocument infos viewlet
+
+## Adapter
+
+- IRichTitle
