@@ -2,9 +2,8 @@ from plone import schema
 from plone.app.dexterity import textindexer
 from plone.app.textfield import RichText
 from plone.app.vocabularies.catalog import StaticCatalogVocabulary
-from plone.app.z3cform.widgets.relateditems import RelatedItemsFieldWidget
-from plone.app.z3cform.widgets.select import Select2FieldWidget
-from plone.app.z3cform.widgets.select import SelectFieldWidget
+from plone.app.z3cform.widgets.select import Select2FieldWidget  # noqa: F401
+from plone.app.z3cform.widgets.select import AjaxSelectFieldWidget  # noqa: F401
 from plone.autoform import directives
 from plone.dexterity.content import Container
 from plone.indexer import indexer
@@ -24,13 +23,11 @@ class IBook(model.Schema):
         vocabulary="collective.taxonomy.bookcategories",
         required=True,
     )
-
     publisher = schema.Choice(
         title="Publisher",
         vocabulary="collective.concepts.BookPublishers",
         required=False,
     )
-
     isbn = schema.TextLine(
         title="ISBN",
     )
@@ -50,7 +47,7 @@ class IBook(model.Schema):
             title="Auteur",
             vocabulary=StaticCatalogVocabulary(
                 {"portal_type": ["Author"]},
-                title_template="{brain.Type}: {brain.Title} at {path}",
+                title_template="{brain.Title} at {path}",
             ),
         ),
         required=False,
@@ -60,12 +57,15 @@ class IBook(model.Schema):
     textindexer.searchable("isbn")
 
     # Widgets
-    # directives.widget("authors", SelectFieldWidget)
-    directives.widget("authors", Select2FieldWidget)
-    # directives.widget(
-    #     "authors",
-    #     RelatedItemsFieldWidget,
-    # )
+    directives.widget(
+        "category",
+        prompt=True,
+        promptMessage="",
+    )
+    directives.widget(
+        "authors",
+        Select2FieldWidget,
+    )
     # directives.widget(
     #     "authors",
     #     AjaxSelectFieldWidget,
