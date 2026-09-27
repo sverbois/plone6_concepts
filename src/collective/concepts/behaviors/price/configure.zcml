@@ -1,0 +1,26 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    >
+
+    <plone:behavior 
+      name="collective.concepts.price"
+      title="Price with net, VAT and gross"
+      factory=".behavior.PriceAdapter"
+      provides=".behavior.IPriceBehavior"
+      for=".behavior.IPriceMarker"
+      marker=".behavior.IPriceMarker"
+      />
+  <browser:viewlet
+      name="collective.concepts.price"
+      for=".behavior.IPriceMarker"
+      view="plone.app.layout.globals.interfaces.IViewView"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+      class=".viewlet.PriceViewlet"
+      template="viewlet.pt"
+      permission="zope2.View"
+      layer="collective.concepts.interfaces.IBrowserLayer"
+      />
+
+</configure>
