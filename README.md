@@ -1,23 +1,27 @@
 # Minimalist Plone 6.2 Blicca Product to introduce Plone concepts
 
 ## Content type
-
 ### Book
-
 ### Author
 
-### Vocabulary
+## Vocabulary
 
 ## View
-
-### Content view
-
+### Books view
 ### Generic view
 
-## Viewet
-
-- IDocument infos viewlet
+## Viewlet
+### collective.concepts.infos
+### collective.concepts.spotlight
 
 ## Adapter
+### RichTitleAdapterForDexterityContent
+### RichTitleAdapterForBook
+### CreatedRichTitleAdapterForDexterityContent
+### ModifiedRichTitleAdapterForDexterityContent
+### [TODO] Multiadapter
 
-- IRichTitle
+
+## Behavior
+### collective.concepts.price
+### collective.concepts.votes
