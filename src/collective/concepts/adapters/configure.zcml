@@ -18,18 +18,17 @@
       provides=".interfaces.IRichTitle"
       for="plone.dexterity.interfaces.IDexterityContent"
       /> -->
+  <adapter 
+      factory=".richtitle.RichTitleAdapterForDexterityContent"/>
   <adapter
-      factory=".richtitle.RichTitleAdapterForDexterityContent"
-      name="type"
-      />
-
+      factory=".richtitle.RichTitleAdapterForBook" />
   <adapter
-      factory=".richtitle.DateRichTitleAdapterForDexterityContent"
-      name="date"
+      factory=".richtitle.CreatedRichTitleAdapterForDexterityContent"
+      name="created"
       />
-
-  <adapter factory=".richtitle.RichTitleAdapterForBook" />
-
-  <!--<adapter factory=".serializer.FieldSerializer" />-->
+  <adapter
+      factory=".richtitle.ModifiedRichTitleAdapterForDexterityContent"
+      name="modified"
+      />
 
 </configure>

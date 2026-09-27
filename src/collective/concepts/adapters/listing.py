@@ -15,7 +15,9 @@ class RichListingView(BrowserView):
         objects = [b.getObject() for b in brains]
         infos = []
         for o in objects:
-            rich = queryAdapter(o, IRichTitle, "date")
+            rich = queryAdapter(o, IRichTitle)
+            # rich = queryAdapter(o, IRichTitle, "created")
+            # rich = queryAdapter(o, IRichTitle, "modified")
             infos.append(
                 {
                     "rich_title": rich.rich_title if rich else o.title,
