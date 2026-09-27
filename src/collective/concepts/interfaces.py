@@ -14,6 +14,7 @@ class ISettings(Interface):
         key_type=schema.TextLine(title="Publisher id"),
         value_type=schema.TextLine(title="Publisher name"),
         required=True,
+        default={},
     )
     shop_url = schema.URI(
         title="Shop URL",
