@@ -1,14 +1,10 @@
 .DS_Store
 .installed.cfg
 .mr.developer.cfg
-.python-version
 *.egg-info
 *.pyc
 /bin
 /develop-eggs
 /eggs
-/include
-/lib
 /parts
 /var
-pyvenv.cfg

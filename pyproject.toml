@@ -1,0 +1,24 @@
+[project]
+name = "collective.concepts"
+version = "0.0.0"
+dependencies = [
+    "collective.taxonomy",
+    "eea.facetednavigation",
+    "Products.CMFPlone",
+    "requests",
+    "z3c.jbot",
+    "z3c.table",
+]
+
+[project.entry-points."plone.autoinclude.plugin"]
+target = "plone"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]
