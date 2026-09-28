@@ -1,0 +1,34 @@
+{
+  // COMMON
+  "editor.formatOnSave": true,
+
+  // PYTHON
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+
+  // XML & ZCML & PT
+  "files.associations": {
+    "*.zcml": "zcml",
+    "*.xml": "zcml"
+  },
+  "[zcml]": {
+    "editor.defaultFormatter": "Plone.plone-vs-utilities"
+  },
+  "zcmlLanguage.zprettyoptions": "-z",
+
+  // JAVASCRIPT
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // CSS
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // SCSS
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
