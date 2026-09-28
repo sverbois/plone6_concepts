@@ -3,7 +3,6 @@ from plone.app.layout.viewlets import common as base
 
 
 class InfosViewlet(base.ViewletBase):
-
     @property
     def message(self):
         return "Hello World !!!"

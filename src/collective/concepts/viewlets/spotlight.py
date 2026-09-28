@@ -5,7 +5,6 @@ from collective.concepts.behaviors import ISpotlight
 
 
 class SpotlightViewlet(base.ViewletBase):
-
     @property
     def infos(self):
         brains = api.content.find(
