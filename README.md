@@ -30,4 +30,10 @@ This product is used to onboard new Plone developers at iMio, introducing them t
 ### collective.concepts.price
 ### collective.concepts.votes
 
+## Form
+### @@ask-question
+### @@change-password
+
+## Table
+
 ## [TODO] Portlet

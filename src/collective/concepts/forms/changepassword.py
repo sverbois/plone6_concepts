@@ -15,7 +15,6 @@ def validate_new_password(value):
 
 
 class IChangePassword(model.Schema):
-
     eid = schema.TextLine(
         title="Identifiant",
         description="Entrez votre eid.",
@@ -41,7 +40,6 @@ class IChangePassword(model.Schema):
 
 
 class ChangePassword(AutoExtensibleForm, form.Form):
-
     schema = IChangePassword
     ignoreContext = True
 

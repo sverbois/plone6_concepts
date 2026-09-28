@@ -7,7 +7,6 @@ from z3c.form import form
 
 
 class IAskQuestion(model.Schema):
-
     category = schema.Choice(
         title="Catégorie du message",
         values=["", "Question", "Suggestion", "Autre"],
@@ -21,7 +20,6 @@ class IAskQuestion(model.Schema):
 
 
 class AskQuestion(AutoExtensibleForm, form.Form):
-
     schema = IAskQuestion
     ignoreContext = True
 
