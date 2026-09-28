@@ -2,8 +2,7 @@ from plone import api
 from Products.Five.browser import BrowserView
 
 
-class BooksView(BrowserView):
-
+class LibraryView(BrowserView):
     @property
     def books(self):
         brains = api.content.find(portal_type="Book", sort_on="sortable_title")

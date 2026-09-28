@@ -7,8 +7,11 @@
 ## Vocabulary
 
 ## View
-### Books view
-### Generic view
+### @@view-basic
+### @@view-pages
+### @@view-with-macro
+### @@view-patterns
+### @@view-library
 
 ## Viewlet
 ### collective.concepts.infos
@@ -21,7 +24,8 @@
 ### ModifiedRichTitleAdapterForDexterityContent
 ### [TODO] Multiadapter
 
-
 ## Behavior
 ### collective.concepts.price
 ### collective.concepts.votes
+
+## [TODO] Portlet

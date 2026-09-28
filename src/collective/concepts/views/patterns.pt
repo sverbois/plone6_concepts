@@ -9,16 +9,16 @@
     <table class="pat-datatables table">
       <thead>
         <tr>
-          <th>Nom</th>
-          <th>URL</th>
-          <th>Taille</th>
+          <th>Name</th>
+          <th>Web site</th>
+          <th>Inhabitants</th>
         </tr>
       </thead>
       <tbody>
         <tr tal:repeat="item view/data">
           <td>${item/name}</td>
-          <td>${python:item['url']}</td>
-          <td>${item/size}</td>
+          <td>${item/url}</td>
+          <td>${item/inhabitants}</td>
         </tr>
       </tbody>
     </table>

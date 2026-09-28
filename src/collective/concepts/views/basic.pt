@@ -21,6 +21,7 @@
       <span tal:content="path:context/title">Titre de mon contenu</span>
     </p>
     <p>
+      <strong>tal:replace="path:context/title"</strong> :
       <span tal:replace="path:context/title">Titre de mon contenu</span>
     </p>
     <h2>Expressions Python</h2>

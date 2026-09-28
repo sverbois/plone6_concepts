@@ -2,8 +2,7 @@ from plone import api
 from Products.Five.browser import BrowserView
 
 
-class ListingView(BrowserView):
-
+class PagesView(BrowserView):
     @property
     def pages(self):
         catalog = api.portal.get_tool("portal_catalog")

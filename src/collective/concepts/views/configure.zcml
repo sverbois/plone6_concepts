@@ -4,7 +4,7 @@
     >
 
   <browser:page
-      name="basic"
+      name="view-basic"
       for="*"
       template="basic.pt"
       permission="zope2.View"
@@ -18,13 +18,13 @@
       />
 
   <browser:page
-      name="otherview"
+      name="view-with-macro"
       for="*"
-      template="otherview.pt"
+      template="withmacro.pt"
       permission="zope2.View"
       />
   <browser:page
-      name="patterns"
+      name="view-patterns"
       for="plone.base.interfaces.siteroot.IPloneSiteRoot"
       class=".patterns.PatternsView"
       template="patterns.pt"
@@ -33,26 +33,26 @@
       />
 
   <browser:page
-      name="infradoc"
+      name="view-github"
       for="plone.base.interfaces.siteroot.IPloneSiteRoot"
-      class=".infradoc.InfradocView"
-      template="infradoc.pt"
+      class=".github.GithubView"
+      template="github.pt"
       permission="zope2.View"
       layer="collective.concepts.interfaces.IBrowserLayer"
       />
   <browser:page
-      name="listing"
+      name="view-pages"
       for="plone.base.interfaces.siteroot.IPloneSiteRoot"
-      class=".listing.ListingView"
-      template="listing.pt"
+      class=".pages.PagesView"
+      template="pages.pt"
       permission="zope2.View"
       layer="collective.concepts.interfaces.IBrowserLayer"
       />
   <browser:page
-      name="books-listing"
+      name="view-library"
       for="plone.base.interfaces.siteroot.IPloneSiteRoot"
-      class=".books.BooksView"
-      template="books.pt"
+      class=".library.LibraryView"
+      template="library.pt"
       permission="zope2.View"
       layer="collective.concepts.interfaces.IBrowserLayer"
       />
