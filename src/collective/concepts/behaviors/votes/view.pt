@@ -37,6 +37,7 @@
           action="${context/absolute_url}/@@collective-concepts-votes-remove#collective-concepts-votes-content"
           method="post"
     >
+      <input tal:replace="structure context/@@authenticator/authenticator" />
       <button class="btn btn-sm btn-primary d-inline-block">Supprimer mon avis</button>
     </form>
   </div>
@@ -46,6 +47,7 @@
           action="${context/absolute_url}/@@collective-concepts-votes-clear#collective-concepts-votes-content"
           method="post"
     >
+      <input tal:replace="structure context/@@authenticator/authenticator" />
       <button class="btn btn-sm btn-danger d-inline-block">Effacer tous les avis</button>
     </form>
   </div>

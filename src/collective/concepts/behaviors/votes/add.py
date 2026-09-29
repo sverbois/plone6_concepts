@@ -3,6 +3,7 @@ from plone import schema
 from plone.app.z3cform.widgets.radio import RadioFieldWidget
 from plone.autoform import directives
 from plone.autoform.form import AutoExtensibleForm
+from plone.protect.authenticator import check as check_authenticator
 from z3c.form import button
 from z3c.form import form
 from zope.interface import Interface
@@ -38,7 +39,7 @@ class VotesForm(AutoExtensibleForm, form.Form):
 
     @button.buttonAndHandler("Voter")
     def handleApply(self, action):
-
+        check_authenticator(self.request)
         data, errors = self.extractData()
         if errors:
             self.status = self.formErrorsMessage

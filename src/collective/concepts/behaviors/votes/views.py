@@ -1,12 +1,16 @@
 from plone import api
+from plone.protect.authenticator import check as check_authenticator
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from zExceptions import MethodNotAllowed
 
 from collective.concepts.behaviors import IVotesBehavior
 
 
 class BaseView(BrowserView):
     index = ViewPageTemplateFile("view.pt")
+    # Write views require a POST with a valid CSRF token.
+    protected = False
 
     @property
     def behavior(self):
@@ -44,6 +48,10 @@ class BaseView(BrowserView):
         raise NotImplementedError
 
     def __call__(self):
+        if self.protected:
+            if self.request.method != "POST":
+                raise MethodNotAllowed("POST required")
+            check_authenticator(self.request)
         self.handle_request()
         return self.index()
 
@@ -54,12 +62,16 @@ class ViewView(BaseView):
 
 
 class RemoveView(BaseView):
+    protected = True
+
     def handle_request(self):
         if self.behavior.has_already_voted(self.current_user_id):
             self.behavior.remove_vote(self.current_user_id)
 
 
 class ClearView(BaseView):
+    protected = True
+
     def handle_request(self):
         if self.can_clear_votes:
             self.behavior.clear()
