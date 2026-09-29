@@ -38,7 +38,9 @@
           method="post"
     >
       <input tal:replace="structure context/@@authenticator/authenticator" />
-      <button class="btn btn-sm btn-primary d-inline-block">Supprimer mon avis</button>
+      <button class="btn btn-sm btn-primary d-inline-block"
+              type="submit"
+      >Supprimer mon avis</button>
     </form>
   </div>
   <div tal:condition="view/can_clear_votes">
@@ -48,7 +50,9 @@
           method="post"
     >
       <input tal:replace="structure context/@@authenticator/authenticator" />
-      <button class="btn btn-sm btn-danger d-inline-block">Effacer tous les avis</button>
+      <button class="btn btn-sm btn-danger d-inline-block"
+              type="submit"
+      >Effacer tous les avis</button>
     </form>
   </div>
 </div>
