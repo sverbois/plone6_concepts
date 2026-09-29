@@ -26,13 +26,19 @@ This product is used to onboard new Plone developers at iMio, introducing them t
 ### ModifiedRichTitleAdapterForDexterityContent
 ### [TODO] Multiadapter
 
+## Form
+### @@ask-question
+### @@change-password
+
 ## Behavior
 ### collective.concepts.price
 ### collective.concepts.votes
 
-## Form
-### @@ask-question
-### @@change-password
+- Use of patterns pat-inject and pat-modal
+- Use of z3c.form
+
+## Faceted view
+### @@faceted-preview-books
 
 ## Table
 

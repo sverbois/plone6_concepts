@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:faceted="http://namespaces.zope.org/faceted"
+    i18n_domain="collective.concepts"
+    >
+
+  <faceted:view
+      name="faceted-preview-books"
+      title="Faceted books preview"
+      class=".faceted_preview_books.FacetedPreviewBooks"
+      template="faceted_preview_books.pt"
+      permission="zope2.View"
+      />
+
+</configure>
