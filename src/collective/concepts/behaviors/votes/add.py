@@ -19,7 +19,14 @@ class IVotesForm(Interface):
         title="Votre vote",
         values=[1, 2, 3, 4, 5],
     )
-    directives.widget("vote", RadioFieldWidget, klass="sebastien")
+    directives.widget(
+        "vote",
+        RadioFieldWidget,
+        # FOR MEMORY : you can add css classes to the widget and its wrapper with the following parameters:
+        wrapper_css_class="WIGDET_WRAPPER_class",
+        klass="WIDGET_FIELD_class",
+        label_css_class="WIDGET_LABEL_class",
+    )
 
 
 class VotesForm(AutoExtensibleForm, form.Form):
@@ -40,8 +47,4 @@ class VotesForm(AutoExtensibleForm, form.Form):
         behavior = IVotesBehavior(self.context)
         behavior.vote(current_user_id, data["vote"])
         api.portal.show_message("Votre vote a été pris en compte.", self.request, type="info")
-
-    # @button.buttonAndHandler("Annuler")
-    # def handleCancel(self, action):
-    #     """User cancelled. Redirect back to the front page.
-    #     """
+        self.request.response.redirect(self.context.absolute_url() + "/@@collective-concepts-votes-view")

@@ -4,7 +4,7 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     >
 
-    <plone:behavior 
+  <plone:behavior
       name="collective.concepts.price"
       title="Price with net, VAT and gross"
       factory=".behavior.PriceAdapter"

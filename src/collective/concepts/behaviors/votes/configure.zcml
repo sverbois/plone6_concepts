@@ -51,10 +51,8 @@
       name="collective-concepts-votes-clear"
       for="collective.concepts.behaviors.IVotesMarker"
       class=".views.ClearView"
-      permission="zope2.View"
+      permission="cmf.ManagePortal"
       layer="collective.concepts.interfaces.IBrowserLayer"
       />
-
-
 
 </configure>

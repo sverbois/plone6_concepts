@@ -1,8 +1,6 @@
 from decimal import Decimal
 
 from plone.autoform.interfaces import IFormFieldProvider
-from plone.indexer import indexer
-from plone.supermodel import directives
 from plone.supermodel import model
 from zope import schema
 from zope.interface import Attribute
@@ -17,7 +15,6 @@ class IPriceMarker(Interface):
 
 @provider(IFormFieldProvider)
 class IPriceBehavior(model.Schema):
-
     price_net = schema.Decimal(
         title="Price (net)",
         required=True,

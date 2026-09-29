@@ -9,7 +9,7 @@ class BaseView(BrowserView):
     index = ViewPageTemplateFile("view.pt")
 
     @property
-    def api(self):
+    def behavior(self):
         return IVotesBehavior(self.context)
 
     @property
@@ -19,13 +19,13 @@ class BaseView(BrowserView):
     @property
     def can_vote(self):
         is_authenticated = not api.user.is_anonymous()
-        has_already_voted = self.api.has_already_voted(self.current_user_id)
+        has_already_voted = self.behavior.has_already_voted(self.current_user_id)
         return is_authenticated and not has_already_voted
 
     @property
     def has_vote(self):
         is_authenticated = not api.user.is_anonymous()
-        has_already_voted = self.api.has_already_voted(self.current_user_id)
+        has_already_voted = self.behavior.has_already_voted(self.current_user_id)
         return is_authenticated and has_already_voted
 
     @property
@@ -34,11 +34,11 @@ class BaseView(BrowserView):
 
     @property
     def vote_number(self):
-        return len(self.api.votes)
+        return len(self.behavior.votes)
 
     @property
     def mean_on_ten(self):
-        return int(self.api.mean * 2)
+        return round(self.behavior.mean * 2)
 
     def handle_request(self):
         raise NotImplementedError
@@ -49,28 +49,17 @@ class BaseView(BrowserView):
 
 
 class ViewView(BaseView):
-
     def handle_request(self):
         pass
 
 
-class VoteView(BaseView):
-    def handle_request(self):
-
-        vote = self.request.form.get("vote")
-        if not vote or not vote.isdigit():
-            return
-        vote = int(vote)
-        self.api.vote(self.current_user_id, vote)
-
-
 class RemoveView(BaseView):
     def handle_request(self):
-        if self.api.has_already_voted(self.current_user_id):
-            self.api.remove_vote(self.current_user_id)
+        if self.behavior.has_already_voted(self.current_user_id):
+            self.behavior.remove_vote(self.current_user_id)
 
 
 class ClearView(BaseView):
     def handle_request(self):
         if self.can_clear_votes:
-            self.api.clear()
+            self.behavior.clear()

@@ -1,3 +1,4 @@
-<div>
-    <strong>Price</strong>: ${view/price_gross} € (Net: ${view/price_net} €, VAT: ${view/price_vat} €)
+<?xml version="1.0" encoding="utf-8"?>
+<div class="bg-secondary-subtle p-2 mb-2 d-inline-block rounded">
+  <strong>Price</strong>: ${view/price_gross} € (Net: ${view/price_net} €, VAT: ${view/price_vat} €)
 </div>
